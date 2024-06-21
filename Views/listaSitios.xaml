@@ -5,8 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:avatarview="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
     xmlns:convert="clr-namespace:PM2E15044.Controllers"
-    Title=""
-    >
+    Title="">
     <ContentPage.Resources>
         <convert:base64Image x:Key="BaseArray" />
     </ContentPage.Resources>
@@ -23,8 +22,8 @@
             Grid.Row="0"
             Margin="0,0,0,15"
             Padding="0,10,0,10"
-            BackgroundColor="black"
-            BorderColor="{DynamicResource TealPrimary}"
+            BackgroundColor="Black"
+            BorderColor="Black"
             CornerRadius="20">
             <StackLayout
                 Grid.Row="0"
@@ -36,13 +35,13 @@
                 <Button
                     x:Name="btnSalir"
                     Margin="20,0,0,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
+                    BackgroundColor="Gray"
                     Clicked="btnSalir_Clicked"
                     CornerRadius="20"
                     FontSize="12"
                     HeightRequest="40"
                     Text="Atras"
-                    TextColor="White"
+                    TextColor="Black"
                     WidthRequest="90" />
 
                 <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
@@ -83,13 +82,13 @@
                                 <Frame
                                     Margin="10,10,0,10"
                                     Padding="0"
-                                    BorderColor="{DynamicResource TealPrimary}"
-                                    CornerRadius="70"
+                                    BorderColor="Black"
+                                    CornerRadius="20"
                                     HasShadow="true"
-                                    HeightRequest="80"
+                                    HeightRequest="100"
                                     HorizontalOptions="Center"
                                     IsClippedToBounds="True"
-                                    WidthRequest="80">
+                                    WidthRequest="100">
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer
                                             x:Name="TapGestureFoto"
@@ -99,12 +98,12 @@
 
                                     <Image
                                         Aspect="AspectFill"
-                                        HeightRequest="80"
+                                        HeightRequest="100"
                                         HorizontalOptions="EndAndExpand"
                                         SemanticProperties.Description="Cute dot net bot waving hi to you!"
                                         Source="{Binding imagen, Converter={StaticResource BaseArray}}"
                                         VerticalOptions="CenterAndExpand"
-                                        WidthRequest="80" />
+                                        WidthRequest="100" />
                                 </Frame>
 
 
@@ -144,7 +143,7 @@
             Margin="0,0,0,0"
             Padding="0,10,0,10"
             BackgroundColor="Black"
-            BorderColor="{DynamicResource TealPrimary}"
+            BorderColor="Black"
             CornerRadius="20">
             <StackLayout
                 Margin="0,0,0,0"
@@ -156,38 +155,38 @@
                 <Button
                     x:Name="btnEliminar"
                     Margin="20,0,5,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
+                    BackgroundColor="Gray"
                     Clicked="btnEliminar_Clicked"
                     CommandParameter="{Binding .}"
                     CornerRadius="20"
                     FontSize="12"
                     HeightRequest="40"
                     Text="Eliminar Sitio"
-                    TextColor="White"
-                    WidthRequest="100" />
+                    TextColor="Black"
+                    WidthRequest="120" />
 
                 <Button
                     x:Name="btnActualizar"
                     Margin="10,0,5,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
+                    BackgroundColor="Gray"
                     Clicked="btnActualizar_Clicked"
                     CornerRadius="20"
                     FontSize="12"
                     HeightRequest="40"
                     Text="Actualizar Sitio"
-                    TextColor="White"
-                    WidthRequest="110" />
+                    TextColor="Black"
+                    WidthRequest="130" />
 
                 <Button
                     x:Name="btnVerMaps"
                     Margin="10,0,5,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
+                    BackgroundColor="Gray"
                     Clicked="btnVerMaps_Clicked"
                     CornerRadius="20"
                     FontSize="12"
                     HeightRequest="40"
                     Text="Ver Mapa"
-                    TextColor="White"
+                    TextColor="Black"
                     WidthRequest="110" />
             </StackLayout>
         </Frame>
