@@ -67,6 +67,8 @@
 		<PackageReference Include="SQLitePCLRaw.core" Version="2.1.8" />
 		<PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.8" />
 		<PackageReference Include="Syncfusion.Maui.Core" Version="24.2.6" />
+		<PackageReference Include="System.Net.NetworkInformation" Version="4.3.0" />
+		<PackageReference Include="System.Reflection" Version="4.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
