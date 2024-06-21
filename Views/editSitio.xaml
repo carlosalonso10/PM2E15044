@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:convert="clr-namespace:PM2E15044.Controllers"
     Title=""
-    BackgroundImageSource="background3.jpg">
+    >
     <ContentPage.Resources>
         <convert:base64Image x:Key="BaseArray" />
     </ContentPage.Resources>
@@ -24,7 +24,7 @@
             Margin="0,0,0,15"
             Padding="0,10,0,10"
             BackgroundColor="Black"
-            BorderColor="{DynamicResource TealPrimary}"
+            BorderColor="Black"
             CornerRadius="20">
             <StackLayout
                 Margin="0,0,0,0"
@@ -34,7 +34,8 @@
                 <Button
                     x:Name="btnRegresar"
                     Margin="20,0,0,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
+                    BackgroundColor="Gray"
+                    BorderColor="Black"
                     Clicked="btnRegresar_Clicked"
                     CornerRadius="20"
                     FontSize="12"
@@ -47,7 +48,7 @@
                 <Label
                     Margin="0,0,30,0"
                     FontAttributes="Bold"
-                    Text="ACTUALIZAR SITIO"
+                    Text="ACTUALIZAR LOCALIZACION"
                     TextColor="White"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
@@ -61,7 +62,7 @@
                     Margin="5"
                     Padding="0"
                     BackgroundColor="{DynamicResource BlackWithTransparency}"
-                    BorderColor="{DynamicResource TealPrimary}"
+                    BorderColor="Black"
                     CornerRadius="10"
                     HasShadow="True"
                     VerticalOptions="CenterAndExpand">
@@ -144,7 +145,7 @@
                         <Frame
                             Margin="0,0,0,10"
                             BackgroundColor="{DynamicResource BlackWithTransparency}"
-                            BorderColor="{DynamicResource TealPrimary}">
+                            BorderColor="Black">
                             <Editor
                                 x:Name="entryDescripcion"
                                 Margin="0,0,0,0"
@@ -172,7 +173,7 @@
             Margin="0,0,0,0"
             Padding="0,10,0,10"
             BackgroundColor="Black"
-            BorderColor="{DynamicResource TealPrimary}"
+            BorderColor="Black"
             CornerRadius="20">
             <StackLayout
                 Grid.Row="2"
@@ -183,14 +184,16 @@
                 <Button
                     x:Name="btnActualizar"
                     Margin="10,0,10,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
+                    BackgroundColor="Gray"
+                    BorderColor="Black"
                     Clicked="btnActualizar_Clicked"
                     CornerRadius="20"
                     FontSize="12"
                     HeightRequest="40"
                     HorizontalOptions="FillAndExpand"
                     SemanticProperties.Hint="Actualizar Sitio"
-                    Text="Agregar" />
+                    Text="Agregar"
+                    TextColor="White" />
             </StackLayout>
         </Frame>
 
