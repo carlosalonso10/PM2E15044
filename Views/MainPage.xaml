@@ -3,8 +3,15 @@
     x:Class="PM2E15044.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title=""
-    >
+    Title="">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="TealPrimary">#008080</Color>
+            <Color x:Key="BlackWithTransparency">#80000000</Color>
+            <Color x:Key="Accent">#FFA500</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Grid>
         <!--  Content Grid  -->
@@ -20,7 +27,7 @@
             Margin="0,0,0,15"
             Padding="0,10,0,10"
             BackgroundColor="Black"
-            BorderColor="{DynamicResource TealPrimary}"
+            BorderColor="Gray"
             CornerRadius="20">
             <StackLayout
                 Margin="0,0,0,0"
@@ -35,10 +42,14 @@
                     VerticalOptions="CenterAndExpand" />
                 <!--  Spacer  -->
                 <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
-
+                <Label
+                    Margin="0,0,30,0"
+                    FontAttributes="Bold"
+                    Text="AGREGAR SITIO VISITADO"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
             </StackLayout>
         </Frame>
-
 
         <ScrollView Grid.Row="1">
             <StackLayout>
@@ -46,13 +57,12 @@
                     x:Name="frameDetalle"
                     Margin="5"
                     Padding="0"
-                    BackgroundColor="{DynamicResource BlackWithTransparency}"
-                    BorderColor="{DynamicResource TealPrimary}"
+                    BackgroundColor="Gray"
+                    BorderColor="Black"
                     CornerRadius="10"
                     HasShadow="True"
                     VerticalOptions="CenterAndExpand">
                     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
 
                         <Label
                             Margin="0,5,0,10"
@@ -83,8 +93,8 @@
                             HeightRequest="40"
                             HorizontalOptions="FillAndExpand"
                             SemanticProperties.Hint="Tomar Foto"
-                            Text="Tomar Foto" />
-
+                            Text="Tomar Foto"
+                            TextColor="White" />
 
                         <Label
                             Margin="0,0,0,5"
@@ -103,10 +113,9 @@
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="00.00"
-                            TextColor="{DynamicResource Accent}"
+                            TextColor="Black"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
-
 
                         <Label
                             Margin="0,0,0,5"
@@ -117,7 +126,6 @@
                             TextColor="White"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
-
                         <Label
                             x:Name="labelLongitude"
                             Margin="0,0,0,10"
@@ -126,7 +134,7 @@
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="00.00"
-                            TextColor="{DynamicResource Accent}"
+                            TextColor="Black"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
 
@@ -142,8 +150,8 @@
 
                         <Frame
                             Margin="0,0,0,10"
-                            BackgroundColor="{DynamicResource BlackWithTransparency}"
-                            BorderColor="{DynamicResource TealPrimary}">
+                            BackgroundColor="Gray"
+                            BorderColor="Black">
                             <Editor
                                 x:Name="entryDescripcion"
                                 Margin="0,0,0,0"
@@ -153,12 +161,11 @@
                                 HorizontalOptions="FillAndExpand"
                                 HorizontalTextAlignment="Center"
                                 Placeholder="Descripción"
-                                TextColor="{DynamicResource Accent}"
+                                TextColor="Black"
                                 VerticalOptions="CenterAndExpand"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="200" />
                         </Frame>
-
                     </StackLayout>
                 </Frame>
             </StackLayout>
@@ -170,7 +177,7 @@
             Margin="0,0,0,0"
             Padding="0,10,0,10"
             BackgroundColor="Black"
-            BorderColor="{DynamicResource TealPrimary}"
+            BorderColor="Gray"
             CornerRadius="20">
             <StackLayout
                 Grid.Row="2"
@@ -189,7 +196,8 @@
                     HeightRequest="40"
                     HorizontalOptions="FillAndExpand"
                     SemanticProperties.Hint="Agregar Sitio"
-                    Text="Agregar" />
+                    Text="Agregar"
+                    TextColor="White" />
                 <Button
                     x:Name="btnListaSitios"
                     Margin="10,0,10,0"
@@ -201,7 +209,8 @@
                     HeightRequest="40"
                     HorizontalOptions="FillAndExpand"
                     SemanticProperties.Hint="Lista de Sitios"
-                    Text="Lista de Sitios" />
+                    Text="Lista de Sitios"
+                    TextColor="White" />
                 <Button
                     x:Name="btnSalir"
                     Margin="0,0,10,0"
@@ -213,11 +222,9 @@
                     HeightRequest="40"
                     HorizontalOptions="FillAndExpand"
                     SemanticProperties.Hint="Salir"
-                    Text="Salir de App" />
-
+                    Text="Salir de App"
+                    TextColor="White" />
             </StackLayout>
         </Frame>
-
     </Grid>
-
 </ContentPage>
