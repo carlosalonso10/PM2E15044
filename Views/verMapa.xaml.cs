@@ -1,7 +1,5 @@
 using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Maps;
-using System.Net.NetworkInformation;
-using System.Reflection;
 using System.Text.Json;
 
 namespace PM2E15044.Views;
@@ -104,10 +102,10 @@ public partial class verMapa : ContentPage
 
     private async Task<string?> GetGeocodeDataAsync(double latitude, double longitude)
     {
-        string BingMapsApiKey = "AvgmS3EQzcTOxAicPpL_4RGvjzoC8zbatT63jzJ64xE3uVCoi4zXF9xyvSoIN3U-";
+        string BingMapsApiKey = "Au7sMtQzyQZRzuQ2krOIbZg8j2MGoHzzOJAmVym6vQjHq_BJ8a1YQGX3iCosFh8u";
         try
         {
-            string apiUrl = $"https://miaplicacion.com/ubicacion/notificacion{latitude},{longitude}?o=json&key={BingMapsApiKey}";
+            string apiUrl = $"https://dev.virtualearth.net/REST/v1/Locations/{latitude},{longitude}?o=json&key={BingMapsApiKey}";
 
             using (HttpClient client = new HttpClient())
             {
