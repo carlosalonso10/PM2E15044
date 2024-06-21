@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E15044.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title=""
+    BackgroundImageSource="background3.jpg">
+
+    <Grid>
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Header  -->
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="0,10,0,10"
+            BackgroundColor="Black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                <Image
+                    Margin="10,0,0,0"
+                    Aspect="AspectFit"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="uthlogo.png"
+                    VerticalOptions="CenterAndExpand" />
+                <!--  Spacer  -->
+                <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+                <Label
+                    Margin="0,0,30,0"
+                    FontAttributes="Bold"
+                    Text="SITE VISITOR APP"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+
+
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <Frame
+                    x:Name="frameDetalle"
+                    Margin="5"
+                    Padding="0"
+                    BackgroundColor="{DynamicResource BlackWithTransparency}"
+                    BorderColor="{DynamicResource TealPrimary}"
+                    CornerRadius="10"
+                    HasShadow="True"
+                    VerticalOptions="CenterAndExpand">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+
+                        <Label
+                            Margin="0,5,0,10"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Imagen Sitio Visitado"
+                            TextColor="White" />
+
+                        <Image
+                            x:Name="imgSitio"
+                            Margin="0,0,0,10"
+                            Aspect="AspectFit"
+                            HeightRequest="200"
+                            HorizontalOptions="FillAndExpand"
+                            Source="defaultsite.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="200" />
+
+                        <Button
+                            x:Name="btnTomarFoto"
+                            Margin="10,0,0,20"
+                            BackgroundColor="{DynamicResource TealPrimary}"
+                            Clicked="btnTomarFoto_Clicked"
+                            CornerRadius="20"
+                            FontSize="12"
+                            HeightRequest="40"
+                            HorizontalOptions="FillAndExpand"
+                            SemanticProperties.Hint="Tomar Foto"
+                            Text="Tomar Foto" />
+
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Latitud"
+                            TextColor="White"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+                        <Label
+                            x:Name="labelLatitude"
+                            Margin="0,0,0,10"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="00.00"
+                            TextColor="{DynamicResource Accent}"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Longitud"
+                            TextColor="White"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+                        <Label
+                            x:Name="labelLongitude"
+                            Margin="0,0,0,10"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="00.00"
+                            TextColor="{DynamicResource Accent}"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Descripción"
+                            TextColor="White"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+                        <Frame
+                            Margin="0,0,0,10"
+                            BackgroundColor="{DynamicResource BlackWithTransparency}"
+                            BorderColor="{DynamicResource TealPrimary}">
+                            <Editor
+                                x:Name="entryDescripcion"
+                                Margin="0,0,0,0"
+                                BackgroundColor="Transparent"
+                                FontSize="16"
+                                HeightRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="Center"
+                                Placeholder="Descripción"
+                                TextColor="{DynamicResource Accent}"
+                                VerticalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center"
+                                WidthRequest="200" />
+                        </Frame>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+
+        <!--  Botones inferiores  -->
+        <Frame
+            Grid.Row="2"
+            Margin="0,0,0,0"
+            Padding="0,10,0,10"
+            BackgroundColor="Black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Grid.Row="2"
+                Padding="0,0,0,0"
+                BackgroundColor="Black"
+                Orientation="Horizontal">
+
+                <Button
+                    x:Name="btnAgregar"
+                    Margin="10,0,0,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnAgregar_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    SemanticProperties.Hint="Agregar Sitio"
+                    Text="Agregar" />
+                <Button
+                    x:Name="btnListaSitios"
+                    Margin="10,0,10,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnListaSitios_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    SemanticProperties.Hint="Lista de Sitios"
+                    Text="Lista de Sitios" />
+                <Button
+                    x:Name="btnSalir"
+                    Margin="0,0,10,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnSalir_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    SemanticProperties.Hint="Salir"
+                    Text="Salir de App" />
+
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+
+</ContentPage>

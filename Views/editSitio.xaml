@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E15044.Views.editSitio"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:convert="clr-namespace:PM2E15044.Controllers"
+    Title=""
+    BackgroundImageSource="background3.jpg">
+    <ContentPage.Resources>
+        <convert:base64Image x:Key="BaseArray" />
+    </ContentPage.Resources>
+
+    <Grid>
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Header  -->
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="0,10,0,10"
+            BackgroundColor="Black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="btnRegresar"
+                    Margin="20,0,0,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnRegresar_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    Text="Atras"
+                    TextColor="White"
+                    WidthRequest="90" />
+                <!--  Spacer  -->
+                <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+                <Label
+                    Margin="0,0,30,0"
+                    FontAttributes="Bold"
+                    Text="ACTUALIZAR SITIO"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+
+
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <Frame
+                    x:Name="frameDetalle"
+                    Margin="5"
+                    Padding="0"
+                    BackgroundColor="{DynamicResource BlackWithTransparency}"
+                    BorderColor="{DynamicResource TealPrimary}"
+                    CornerRadius="10"
+                    HasShadow="True"
+                    VerticalOptions="CenterAndExpand">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+
+                        <Label
+                            Margin="0,5,0,10"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Imagen Sitio Visitado"
+                            TextColor="White" />
+
+                        <Image
+                            x:Name="imgSitio"
+                            Margin="0,0,0,10"
+                            Aspect="AspectFit"
+                            HeightRequest="200"
+                            HorizontalOptions="FillAndExpand"
+                            Source="{Binding imagen, Converter={StaticResource BaseArray}}"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="200" />
+
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Latitud"
+                            TextColor="White"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+                        <Label
+                            x:Name="labelLatitude"
+                            Margin="0,0,0,10"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding latitud}"
+                            TextColor="{DynamicResource Accent}"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Longitud"
+                            TextColor="White"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+                        <Label
+                            x:Name="labelLongitude"
+                            Margin="0,0,0,10"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding longitud}"
+                            TextColor="{DynamicResource Accent}"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Descripción"
+                            TextColor="White"
+                            VerticalOptions="Start"
+                            VerticalTextAlignment="Center" />
+
+                        <Frame
+                            Margin="0,0,0,10"
+                            BackgroundColor="{DynamicResource BlackWithTransparency}"
+                            BorderColor="{DynamicResource TealPrimary}">
+                            <Editor
+                                x:Name="entryDescripcion"
+                                Margin="0,0,0,0"
+                                BackgroundColor="Transparent"
+                                FontSize="16"
+                                HeightRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="Center"
+                                Placeholder="Descripción"
+                                Text="{Binding descripcion}"
+                                TextColor="{DynamicResource Accent}"
+                                VerticalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center"
+                                WidthRequest="200" />
+                        </Frame>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+
+        <!--  Botones inferiores  -->
+        <Frame
+            Grid.Row="2"
+            Margin="0,0,0,0"
+            Padding="0,10,0,10"
+            BackgroundColor="Black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Grid.Row="2"
+                Padding="0,0,0,0"
+                BackgroundColor="Black"
+                Orientation="Horizontal">
+
+                <Button
+                    x:Name="btnActualizar"
+                    Margin="10,0,10,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnActualizar_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    SemanticProperties.Hint="Actualizar Sitio"
+                    Text="Agregar" />
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E15044.Views.listaSitios"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:avatarview="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+    xmlns:convert="clr-namespace:PM2E15044.Controllers"
+    Title=""
+    BackgroundImageSource="background3.jpg">
+    <ContentPage.Resources>
+        <convert:base64Image x:Key="BaseArray" />
+    </ContentPage.Resources>
+
+    <Grid>
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="0,10,0,10"
+            BackgroundColor="black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Grid.Row="0"
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+
+                <Button
+                    x:Name="btnSalir"
+                    Margin="20,0,0,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnSalir_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    Text="Atras"
+                    TextColor="White"
+                    WidthRequest="90" />
+
+                <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+
+                <Label
+                    Margin="0,0,30,0"
+                    FontAttributes="Bold"
+                    Text="LISTA DE SITIOS VISITADOS"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+
+
+        <!--  Body: Collection View  -->
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <CollectionView
+                    x:Name="listUbicacion"
+                    Margin="10,5,10,5"
+                    BackgroundColor="Transparent"
+                    SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                x:Name="gridSitios"
+                                Margin="0,10,0,10"
+                                BackgroundColor="Transparent">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                </Grid.GestureRecognizers>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Frame
+                                    Margin="10,10,0,10"
+                                    Padding="0"
+                                    BorderColor="{DynamicResource TealPrimary}"
+                                    CornerRadius="70"
+                                    HasShadow="true"
+                                    HeightRequest="80"
+                                    HorizontalOptions="Center"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="80">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            x:Name="TapGestureFoto"
+                                            CommandParameter="verFoto"
+                                            Tapped="TapGestureFoto_Tapped" />
+                                    </Frame.GestureRecognizers>
+
+                                    <Image
+                                        Aspect="AspectFill"
+                                        HeightRequest="80"
+                                        HorizontalOptions="EndAndExpand"
+                                        SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                                        Source="{Binding imagen, Converter={StaticResource BaseArray}}"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="80" />
+                                </Frame>
+
+
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="10,0,10,10"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="{Binding descripcion}"
+                                    TextColor="White"
+                                    VerticalOptions="CenterAndExpand" />
+
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="{DynamicResource BlackWithTransparency}" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="{DynamicResource Accent}" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+
+        <!--  Botones Inferiores  -->
+        <Frame
+            Grid.Row="2"
+            Margin="0,0,0,0"
+            Padding="0,10,0,10"
+            BackgroundColor="Black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+
+
+                <Button
+                    x:Name="btnEliminar"
+                    Margin="20,0,5,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnEliminar_Clicked"
+                    CommandParameter="{Binding .}"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    Text="Eliminar Sitio"
+                    TextColor="White"
+                    WidthRequest="100" />
+
+                <Button
+                    x:Name="btnActualizar"
+                    Margin="10,0,5,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnActualizar_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    Text="Actualizar Sitio"
+                    TextColor="White"
+                    WidthRequest="110" />
+
+                <Button
+                    x:Name="btnVerMaps"
+                    Margin="10,0,5,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnVerMaps_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    Text="Ver Mapa"
+                    TextColor="White"
+                    WidthRequest="110" />
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+</ContentPage>

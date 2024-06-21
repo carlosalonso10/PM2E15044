@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2E15044.Views.verMapa"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+    Title=""
+    BackgroundImageSource="background3.jpg">
+    <Grid>
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Frame
+            Grid.Row="0"
+            Margin="0,0,0,15"
+            Padding="0,10,0,10"
+            BackgroundColor="black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout Grid.Row="0">
+                <!--  Boton Regresar  -->
+                <StackLayout
+                    Margin="0,0,0,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Orientation="Horizontal">
+
+                    <Button
+                        x:Name="btnSalir"
+                        Margin="20,0,0,0"
+                        BackgroundColor="{DynamicResource TealPrimary}"
+                        Clicked="btnSalir_Clicked"
+                        CornerRadius="20"
+                        FontSize="12"
+                        HeightRequest="40"
+                        Text="Atras"
+                        TextColor="White"
+                        WidthRequest="90" />
+
+                    <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+
+                    <Label
+                        x:Name="labelSitio"
+                        Margin="0,0,30,0"
+                        FontAttributes="Bold"
+                        Text=""
+                        TextColor="White"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+
+
+        <!--  Body: Collection View  -->
+        <ScrollView Grid.Row="1">
+            <Frame
+                Margin="10,10,10,10"
+                BackgroundColor="{DynamicResource BlackWithTransparency}"
+                BorderColor="{DynamicResource TealPrimary}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <maps:Map
+                        x:Name="mapa"
+                        Margin="0,0,0,0"
+                        HeightRequest="500"
+                        IsShowingUser="True">
+                        <maps:Map.Pins>
+                            <!--  Pins will be added dynamically in code-behind  -->
+                        </maps:Map.Pins>
+                    </maps:Map>
+                </StackLayout>
+            </Frame>
+
+        </ScrollView>
+
+        <Frame
+            Grid.Row="2"
+            Margin="0,0,0,0"
+            Padding="0,10,0,10"
+            BackgroundColor="Black"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout
+                Margin="0,0,0,0"
+                Padding="0,10,0,10"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="btnShare"
+                    Margin="10,0,5,0"
+                    BackgroundColor="{DynamicResource TealPrimary}"
+                    Clicked="btnShare_Clicked"
+                    CornerRadius="20"
+                    FontSize="12"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Compartir Sitio"
+                    TextColor="White" />
+            </StackLayout>
+        </Frame>
+        <!--  Button for sharing  -->
+
+    </Grid>
+</ContentPage>
